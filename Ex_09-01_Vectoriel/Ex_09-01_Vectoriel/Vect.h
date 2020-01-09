@@ -10,10 +10,12 @@ private:
 
 public:
 	//Constructeur
+	Vect();
 	Vect(float, float, float);
 
 	//Methode
-	friend void Matrice::prod(Vect& vect); //fct amie membre
-	friend void prod(Vect&, Matrice&); //fct amie independante
+	void affiche();
+	friend Vect Matrice::prod(Vect& vect); //fct amie membre
+	friend Vect prod(Vect&, Matrice&); //fct amie independante
 };
 

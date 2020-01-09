@@ -11,16 +11,21 @@ int main() {
 	Matrice cMat1(tab1);
 	Matrice cMat2(tab2);
 	Vect cV(10.f, 5.f, 97.f);
+	Vect cVec1;
+	Vect cVec2;
 
 	//Utilisation de la fonction amie membre
 	cout << "Operation avec fct amie membre" << endl;
 	cout << "" << endl;
-	cout << "Matrice avant operation :" << endl;
+	cout << "La matrice :" << endl;
 	cMat1.affiche();
 	cout << "" << endl;
-	cout << "Matrice apres operation :" << endl;
-	cMat1.prod(cV);
-	cMat1.affiche();
+	cout << "mutliplier par le vecteur :" << endl;
+	cV.affiche();
+	cout << "" << endl;
+	cout << "Cela donne le vecteur :" << endl;
+	cVec1 = cMat1.prod(cV);
+	cVec1.affiche();
 
 	cout << "" << endl;
 	cout << "" << endl;
@@ -28,12 +33,15 @@ int main() {
 	//Utilisation de la fonction amie independante
 	cout << "Operation avec fct amie independante" << endl;
 	cout << "" << endl;
-	cout << "Matrice avant operation :" << endl;
+	cout << "La matrice :" << endl;
 	cMat2.affiche();
 	cout << "" << endl;
-	cout << "Matrice apres operation :" << endl;
-	prod(cV, cMat2);
-	cMat2.affiche();
+	cout << "mutliplier par le vecteur :" << endl;
+	cV.affiche();
+	cout << "" << endl;
+	cout << "Cela donne le vecteur :" << endl;
+	cVec2 = prod(cV, cMat2);
+	cVec2.affiche();
 
 	return 0;
 }

@@ -14,7 +14,7 @@ public:
 
 	//Methode
 	void affiche();
-	void prod(Vect& vect); //fct amie membre
-	friend void prod(Vect&, Matrice&); //fct amie independante
+	Vect prod(Vect& vect); //fct amie membre
+	friend Vect prod(Vect&, Matrice&); //fct amie independante
 };
 

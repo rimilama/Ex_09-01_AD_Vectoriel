@@ -26,39 +26,45 @@ void Matrice::affiche() {
 }
 
 //fonction amie membre effectuant le produit d'une matrice par un vecteur
-void Matrice::prod(Vect& vect) {
+Vect Matrice::prod(Vect& vect) {
+	float fX = 0, fY = 0, fZ = 0;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			switch (j) {
 				case 0:
-					this->Mat[i][j] = this->Mat[i][j] * vect.fX;
+					fX += this->Mat[i][j] * vect.fX;
 					break;
 				case 1:
-					this->Mat[i][j] = this->Mat[i][j] * vect.fY;
+					fY += this->Mat[i][j] * vect.fY;
 					break;
 				case 2:
-					this->Mat[i][j] = this->Mat[i][j] * vect.fZ;
+					fZ += this->Mat[i][j] * vect.fZ;
 					break;
 			}
 		}
 	}
+	Vect cResultat(fX, fY, fZ);
+	return cResultat;
 }
 
 //fonction amie independante effectuant le produit d'une matrice par un vecteur
-void prod(Vect& vect, Matrice& mat) {
+Vect prod(Vect& vect, Matrice& mat) {
+	float fX = 0, fY = 0, fZ = 0;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			switch (j) {
 			case 0:
-				mat.Mat[i][j] = mat.Mat[i][j] * vect.fX;
+				fX += mat.Mat[i][j] * vect.fX;
 				break;
 			case 1:
-				mat.Mat[i][j] = mat.Mat[i][j] * vect.fY;
+				fY += mat.Mat[i][j] * vect.fY;
 				break;
 			case 2:
-				mat.Mat[i][j] = mat.Mat[i][j] * vect.fZ;
+				fZ += mat.Mat[i][j] * vect.fZ;
 				break;
 			}
 		}
 	}
+	Vect cResultat(fX, fY, fZ);
+	return cResultat;
 }
